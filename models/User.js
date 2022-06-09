@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-// const Thought = require('./Thought.js')
 
 const UserSchema = new Schema(
   {
@@ -42,7 +41,7 @@ const UserSchema = new Schema(
     id: false,
   }
 );
-// get total count of friend counts on retrieval
+// get total count of friend counts on retrieval of array
 UserSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });

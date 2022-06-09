@@ -1,4 +1,4 @@
-// get the Thought and User model
+// import the Thought and User model
 const { Thought, User } = require("../models");
 
 const thoughtController = {
@@ -39,7 +39,7 @@ const thoughtController = {
       });
   },
 
-  // createThought
+  // create Thought
   createThought({ body }, res) {
     Thought.create(body)
       .then((dbThoughtData) => {
@@ -103,7 +103,7 @@ const thoughtController = {
       })
       .catch((err) => res.json(err));
   },
-  // delete reaction from thought
+  // remove reaction from thought
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },

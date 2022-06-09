@@ -1,3 +1,4 @@
+// import the User model
 const { User } = require("../models");
 
 const userController = {
@@ -38,7 +39,7 @@ const userController = {
       });
   },
 
-  // createUser
+  // create User
   createUser({ body }, res) {
     User.create(body)
       .then((dbUserData) => res.json(dbUserData))
@@ -91,7 +92,7 @@ const userController = {
       .catch((err) => res.json(err));
   },
 
-  // delete friend
+  // remove friend
   removeFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
